@@ -1,0 +1,500 @@
+* {
+    direction: ltr;
+    color: #333;
+    margin-top: 0px;
+    padding: 0px;
+    font-family: "Poppins", sans-serif;
+
+}
+
+body {
+    direction: ltr;
+    width: 100%;
+    margin: 0;
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+/*--------------------navbar--------------------*/
+
+#NavBar {
+    color: #fff;
+    text-align: left;
+    width: 100%;
+    height: 50px;
+    display: grid;
+    grid-template-areas: "LNavBar LNavBar LNavBar LNavBar RNavBar RNavBar RNavBar";
+}
+
+#LNavBar {
+    background: #333;
+    grid-area: LNavBar;
+    display: grid;
+    grid-template-areas: "NavBarName" "NavBarLevel";
+}
+
+#RNavBar {
+    background: #999;
+    grid-area: RNavBar;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#NavBarName {
+    width: 100%;
+    background: #555;
+    grid-area: NavBarName;
+}
+
+#NavBarLevel {
+    width: 100%;
+    background: #999;
+    grid-area: NavBarLevel;
+}
+
+/*--------------------LottoryCard--------------------*/
+
+.LottoryCard{
+    background: #292626;
+    text-align: center;
+    width: calc(100%- 30px);
+    border: #387ef0 solid 1px;
+    margin: 15px;
+    border-radius: 10px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 10fr 60fr;
+    grid-template-areas: "LottoryHeader LottoryHeader" "LottoryGS LottoryGS" "btn-shine btn-shine" "CountTicket CountTicket" "BuyTicket BuyTicket";
+}
+.LottoryHeader{
+    grid-area: LottoryHeader;
+    display: flex;
+    justify-content: center;
+    background-image: url(../images/1.webp);
+    width: 100%;
+    height: 140px;
+    position: relative;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    border-radius: 2vw;
+    color: #ff3a3a;
+}
+
+.LottoryTitle{
+    position: absolute;
+    font-size: 22px;
+    font-weight: bold;
+    text-wrap: nowrap;
+    top: 60px;
+    right: 65%;
+    transform: translate(50%, -50%);
+    color: white;
+    z-index: 5;
+}
+
+.CountTicket {
+    grid-area: CountTicket;
+    text-align: left;
+    margin: 10px 10px;
+    width: calc(100% - 20px);
+    font-size: 20px;
+    color: white;
+}
+.CountTicket table {
+    color: white;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.CountTicket th, td {
+    font-size: 12px;
+    color: white;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.CountTicket tr:hover {
+    background-color: rgba(136, 162, 237, 0.62);
+    border: #387ef0 solid 1px;
+    border-radius: 5px
+
+}
+
+.BuyTicket {
+    grid-area: BuyTicket;
+    width: 75%;
+    box-shadow: #6f42c1 1px 1px 1px;
+    background: #6f42c1;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: auto;
+    height: 5vh;
+    font-size: 20px;
+}
+.modal-footer{
+    justify-content: center;
+}
+
+/*--------------------Time--------------------*/
+
+
+.TimeContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    width: 30%;
+    height: 15%;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+.TimeFlag{
+    width: 20%;
+    height: 12vh;
+    box-shadow: #292626 2px 2px 2px;
+    border-right: 2px solid #292626;
+    border-left: 2px solid #292626;
+    border-bottom: 2px solid #292626;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+
+}
+.CapTime{
+    margin-top: 2.5vh;
+    font-size: 9px;
+    color: white;
+    transform: rotate(270deg);
+}
+.TimerBlur{
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    background: #bdad9f;
+    filter: blur(25px);
+    -webkit-filter: blur(25px);
+    position: absolute;
+    top: 8vh;
+}
+.TimerTwo{
+    margin-top: 1.5vh;
+    font-size: 14px;
+    color: white;
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+/* From Uiverse.io by Javierrocadev */
+.TimeFlag:first-child {
+    background-image: repeating-radial-gradient(  #0c0a0a 80%,#2f312f 90%,#3f4549 90%);
+    background-size: 65px 65px;
+}
+.TimeFlag:nth-child(2) {
+    background: radial-gradient(
+            circle farthest-side at 0% 50%,
+            #282828 23.5%,
+            rgba(255, 170, 0, 0) 0
+    )
+    21px 30px,
+    radial-gradient(
+            circle farthest-side at 0% 50%,
+            #a1000e 24%,
+            rgba(240, 166, 17, 0) 0
+    )
+    19px 30px,
+    linear-gradient(
+            #282828 14%,
+            rgba(240, 166, 17, 0) 0,
+            rgba(240, 166, 17, 0) 85%,
+            #282828 0
+    )
+    0 0,
+    linear-gradient(
+            150deg,
+            #282828 24%,
+            #a1000e 0,
+            #a1000e 26%,
+            rgba(240, 166, 17, 0) 0,
+            rgba(240, 166, 17, 0) 74%,
+            #a1000e 0,
+            #a1000e 76%,
+            #282828 0
+    )
+    0 0,
+    linear-gradient(
+            30deg,
+            #282828 24%,
+            #a1000e 0,
+            #a1000e 26%,
+            rgba(240, 166, 17, 0) 0,
+            rgba(240, 166, 17, 0) 74%,
+            #a1000e 0,
+            #a1000e 76%,
+            #282828 0
+    )
+    0 0,
+    linear-gradient(90deg, #a1000e 2%, #282828 0, #282828 98%, #a1000e 0%) 0 0
+    #282828;
+    background-size: 40px 60px;
+}
+
+.TimeFlag:nth-child(3) {
+    --s: 150px; /* control the size */
+    --c1: #ff847c;
+    --c2: #e84a5f;
+    --c3: #fecea8;
+    --c4: #99b898;
+
+    background: conic-gradient(
+            from 45deg at 75% 75%,
+            var(--c3) 90deg,
+            var(--c1) 0 180deg,
+            #0000 0
+    ),
+    conic-gradient(from -45deg at 25% 25%, var(--c3) 90deg, #0000 0),
+    conic-gradient(from -45deg at 50% 100%, #0000 180deg, var(--c3) 0),
+    conic-gradient(
+            from -45deg,
+            var(--c1) 90deg,
+            var(--c2) 0 225deg,
+            var(--c4) 0
+    );
+    background-size: var(--s) var(--s);
+}
+
+/*.TimeFlag:nth-child(4) {*/
+
+/*    background: radial-gradient(*/
+/*            50% 50% at 100% 0,*/
+/*            #ca3f3f 0% 5%,*/
+/*            #ffffff 6% 15%,*/
+/*            #ca3f3f 16% 25%,*/
+/*            #ffffff 26% 35%,*/
+/*            #ca3f3f 36% 45%,*/
+/*            #ffffff 46% 55%,*/
+/*            #ca3f3f 56% 65%,*/
+/*            #ffffff 66% 75%,*/
+/*            #ca3f3f 76% 85%,*/
+/*            #ffffff 86% 95%,*/
+/*            #0000 96%*/
+/*    ),*/
+/*    radial-gradient(*/
+/*            50% 50% at 0 100%,*/
+/*            #ca3f3f 0% 5%,*/
+/*            #ffffff 6% 15%,*/
+/*            #ca3f3f 16% 25%,*/
+/*            #ffffff 26% 35%,*/
+/*            #ca3f3f 36% 45%,*/
+/*            #ffffff 46% 55%,*/
+/*            #ca3f3f 56% 65%,*/
+/*            #ffffff 66% 75%,*/
+/*            #ca3f3f 76% 85%,*/
+/*            #ffffff 86% 95%,*/
+/*            #0000 96%*/
+/*    ),*/
+/*    radial-gradient(*/
+/*            50% 50%,*/
+/*            #ca3f3f 0% 5%,*/
+/*            #ffffff 6% 15%,*/
+/*            #ca3f3f 16% 25%,*/
+/*            #ffffff 26% 35%,*/
+/*            #ca3f3f 36% 45%,*/
+/*            #ffffff 46% 55%,*/
+/*            #ca3f3f 56% 65%,*/
+/*            #ffffff 66% 75%,*/
+/*            #ca3f3f 76% 85%,*/
+/*            #ffffff 86% 95%,*/
+/*            #0000 96%*/
+/*    ),*/
+/*    radial-gradient(*/
+/*            50% 50%,*/
+/*            #ca3f3f 0% 5%,*/
+/*            #ffffff 6% 15%,*/
+/*            #ca3f3f 16% 25%,*/
+/*            #ffffff 26% 35%,*/
+/*            #ca3f3f 36% 45%,*/
+/*            #ffffff 46% 55%,*/
+/*            #ca3f3f 56% 65%,*/
+/*            #ffffff 66% 75%,*/
+/*            #ca3f3f 76% 85%,*/
+/*            #ffffff 86% 95%,*/
+/*            #0000 96%*/
+/*    )*/
+/*    38px 38px;*/
+/*    background-size: 76px 76px;*/
+/*    background-color: #ca3f3f;*/
+/*    color: black;*/
+/*}*/
+/* From Uiverse.io by chase2k25 */
+.container {
+    background:
+            radial-gradient(circle, #ff6f61 20%, transparent 20%) 0 0,
+            radial-gradient(circle, #ffcc00 20%, transparent 20%) 40px 40px;
+    background-size: 80px 80px; /* Adjust size of circles */
+    background-repeat: repeat;
+}
+
+/*--------------------LottoryGuess--------------------*/
+.LtryGs{
+    grid-area: LottoryGS;
+    margin: 1vh 0;
+    display: block;
+}
+.LtryBtn {
+    width: 25%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    margin: 5px;
+}
+.LtryBtn:first-child{
+    background-color: #ddd;
+    /*border-radius: 10px 10px 10px 0;*/
+}
+.LtryBtn:first-child:hover {
+    background-color: rgb(197, 197, 197);
+}
+.LtryBtn:last-child{
+    color: #fff;
+    background-color: #7747FF;
+    border-radius: 10px 10px 0 10px;
+}
+.LtryBtn:last-child:hover {
+    color: #7747FF;
+    background-color: #fff;
+}
+.LtryInpCn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0 10px 0;
+    grid-area: LtryInpCn;
+}
+.LtryBtnCn{
+    margin: 2vh 0;
+    grid-area: LtryBtnCn;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.Lottoryinput {
+    max-width: 190px;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    margin: 5px;
+    transition: .5s;
+    border: #333333 solid 1px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transform: rotate(360deg);
+}
+
+.LtryInpCn svg {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.Lottoryinput:focus {
+    width: 80px;
+    transform: rotate(0);
+}
+
+.btn-shine {
+    width: calc(100%- 30px);
+    grid-area: btn-shine;
+    height: 50px;
+    color: #fff;
+    background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
+    background-position: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    white-space: nowrap;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/*if start => rendering all the time => for background change the button to <a>*/
+
+
+@-moz-keyframes shine {
+    0% {
+        background-position: 0;
+    }
+    60% {
+        background-position: 180px;
+    }
+    100% {
+        background-position: 180px;
+    }
+}
+@-webkit-keyframes shine {
+    0% {
+        background-position: 0;
+    }
+    60% {
+        background-position: 180px;
+    }
+    100% {
+        background-position: 180px;
+    }
+}
+@-o-keyframes shine {
+    0% {
+        background-position: 0;
+    }
+    60% {
+        background-position: 180px;
+    }
+    100% {
+        background-position: 180px;
+    }
+}
+@keyframes shine {
+    0% {
+        background-position: 0;
+    }
+    60% {
+        background-position: 180px;
+    }
+    100% {
+        background-position: 180px;
+    }
+}
+
+/*--------------------LottoryGuess--------------------*/
